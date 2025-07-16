@@ -12,6 +12,6 @@ import python
 
 from ClassMetrics c
 where
-  c.isSource() and
+  c.inSource() and
   not c.getQualifiedName().matches("%test%")
 select c.getQualifiedName(), c.getEfferentCoupling()
