@@ -10,9 +10,8 @@
 
 import python
 
-from ClassMetrics cm, Class c
+from Class c
 where
-  cm.getClass() = c and
-  cm.inSource() and
-  not cm.getQualifiedName().matches("%test%")
-select c.getLocation().getFile().getRelativePath(), cm.getEfferentCoupling()
+  c.inSource() and
+  not c.getQualifiedName().matches("%test%")
+select c.getLocation().getFile().getRelativePath(), c.getMetrics().getEfferentCoupling()
