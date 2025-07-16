@@ -10,8 +10,8 @@
 
 import python
 
-from ClassMetrics cm
+from ClassMetrics c
 where
-  cm.isSource() and
-  not cm.getQualifiedName().matches("%test%")
-select mr.getQualifiedName(), mr.getAfferentCoupling()
+  c.isSource() and
+  not c.getQualifiedName().matches("%test%")
+select c.getQualifiedName(), c.getAfferentCoupling()
