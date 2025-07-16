@@ -1,5 +1,5 @@
 /**
- * @name Efferent Coupling per Class
+ * @name Efferent Coupling per Class (Python)
  * @description Computes efferent coupling for each Python class in source files (excluding tests).
  * @kind metric
  * @metricType count
@@ -9,15 +9,10 @@
  */
 
 import python
-import semmle.code.python.metrics.Coupling
-import semmle.code.python.File
 
-from Class c, ClassMetrics cm, File f
+from ClassMetrics cm, Class c
 where
   cm.getClass() = c and
-  f = c.getFile() and
-  f.isSourceFile() and
-  not f.getRelativePath().matches("%/test/%") and
-  not f.getRelativePath().matches("test/%") and
-  not f.getRelativePath().matches("%test%")
-select f.getRelativePath(), cm.getEfferentCoupling()
+  cm.inSource() and
+  not cm.getQualifiedName().matches("%test%")
+select c.getLocation().getFile().getRelativePath(), cm.getEfferentCoupling()
