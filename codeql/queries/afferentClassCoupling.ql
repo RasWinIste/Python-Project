@@ -1,5 +1,5 @@
 /**
- * @name Afferent Coupling per Class (Python)
+ * @name Afferent Coupling per Class
  * @description Computes afferent coupling for each Python class in source files (excluding tests).
  * @kind metric
  * @metricType count
@@ -9,9 +9,15 @@
  */
 
 import python
+import semmle.code.python.metrics.Coupling
+import semmle.code.python.File
 
-from ClassMetrics c
+from Class c, ClassMetrics cm, File f
 where
-  c.inSource() and
-  not c.getQualifiedName().matches("%test%")
-select c.getQualifiedName(), c.getAfferentCoupling()
+  cm.getClass() = c and
+  f = c.getFile() and
+  f.isSourceFile() and
+  not f.getRelativePath().matches("%/test/%") and
+  not f.getRelativePath().matches("test/%") and
+  not f.getRelativePath().matches("%test%")
+select f.getRelativePath(), cm.getAfferentCoupling()
