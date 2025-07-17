@@ -1,21 +1,24 @@
 from datetime import date
-from pythonProject.models.user import User
-from pythonProject.utils import greet
 
-class App:
-    def __init__(self):
-        self.user = User(
-            name="Alice",
-            birthday=date(1990, 5, 15),
-            address="123 Main St, Springfield"
+class User:
+    def __init__(self, name: str, birthday: date, address: str):
+        self.name = name
+        self.birthday = birthday
+        self.address = address
+
+    def age(self) -> int:
+        today = date.today()
+        return today.year - self.birthday.year - (
+            (today.month, today.day) < (self.birthday.month, self.birthday.day)
         )
 
-    def run(self):
-        greet(self.user.name)
-        print(f"User Info: {self.user}")
-        print(f"Age: {self.user.age()} years old")
+    def is_birthday_today(self) -> bool:
+        today = date.today()
+        return today.month == self.birthday.month and today.day == self.birthday.day
 
-        if self.user.is_birthday_today():
-            print("🎉 Happy Birthday, Alice!")
-        else:
-            print("No birthday today.")
+    def __repr__(self):
+        return (
+            f"<User name={self.name}, "
+            f"birthday={self.birthday.isoformat()}, "
+            f"address={self.address}>"
+        )
