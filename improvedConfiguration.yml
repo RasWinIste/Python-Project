@@ -42,7 +42,7 @@ analysis_metrics:
         upper_bound: 15  # Upper limit is +15
 
   - id: ncloc
-    checked: true
+    checked: false
     source: SonarQube
     complementary: false
     thresholds:
