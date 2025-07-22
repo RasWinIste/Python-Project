@@ -1,5 +1,5 @@
 analysis_metrics:
-  complexity:
+  - id: complexity
     checked: true
     source: SonarQube
     thresholds:
@@ -19,7 +19,7 @@ analysis_metrics:
         lower_bound: 12
         upper_bound: 15  # Upper limit is +15
 
-  cognitive_complexity:
+  - id: cognitive_complexity
     checked: true
     source: SonarQube
     thresholds:
@@ -39,7 +39,7 @@ analysis_metrics:
         lower_bound: 12
         upper_bound: 15  # Upper limit is +15
 
-  ncloc:
+  - id: ncloc
     checked: true
     source: SonarQube
     thresholds:
@@ -59,7 +59,7 @@ analysis_metrics:
         lower_bound: 30
         upper_bound: 40  # Upper limit is +40
 
-  instability:
+  - id: instability
     checked: true
     source: CodeQL
     thresholds:
@@ -79,7 +79,7 @@ analysis_metrics:
         lower_bound: 0.8
         upper_bound: 1  # Upper limit is 100%
 
-  new_coverage:
+  - id: new_coverage
     checked: true
     source: SonarQube
     thresholds:
