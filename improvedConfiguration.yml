@@ -1,7 +1,7 @@
 analysis_metrics:
   - id: complexity
     checked: true
-    source: aaa
+    source: Sonar
     complementary: false
     thresholds:
       a:
