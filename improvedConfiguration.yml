@@ -1,7 +1,7 @@
 analysis_metrics:
   - id: complexity
     checked: true
-    source: SonarQube
+    source: Sonar
     complementary: false
     thresholds:
       a:
@@ -22,7 +22,7 @@ analysis_metrics:
 
   - id: cognitive_complexity
     checked: true
-    source: SonarQube
+    source: Sonar
     complementary: false
     thresholds:
       a:
@@ -43,7 +43,7 @@ analysis_metrics:
 
   - id: ncloc
     checked: true
-    source: SonarQube
+    source: Sonar
     complementary: false
     thresholds:
       a:
@@ -85,7 +85,7 @@ analysis_metrics:
 
   - id: new_coverage
     checked: true
-    source: SonarQube
+    source: Sonar
     complementary: true
     thresholds:
       a:
