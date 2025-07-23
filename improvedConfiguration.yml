@@ -21,7 +21,7 @@ analysis_metrics:
         upper_bound: 15  # Upper limit is +15
 
   - id: cognitive_complexity
-    checked: false
+    checked: true
     source: Sonar
     complementary: false
     thresholds:
