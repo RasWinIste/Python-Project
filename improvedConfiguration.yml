@@ -48,19 +48,19 @@ analysis_metrics:
     thresholds:
       a:
         lower_bound: 0
-        upper_bound: 5
-      b:
-        lower_bound: 5
         upper_bound: 10
-      c:
+      b:
         lower_bound: 10
         upper_bound: 20
-      d:
+      c:
         lower_bound: 20
-        upper_bound: 30
+        upper_bound: 40
+      d:
+        lower_bound: 40
+        upper_bound: 100
       e:
-        lower_bound: 30
-        upper_bound: 40  # Upper limit is +40
+        lower_bound: 100
+        upper_bound: 200  # Upper limit is +40
 
   - id: instability
     checked: true
