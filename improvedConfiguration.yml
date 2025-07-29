@@ -51,7 +51,7 @@ analysis_metrics:
           upper_bound: 15  # Upper limit is +15
       
     - id: instability
-      checked: true
+      checked: false
       source: CodeQL
       thresholds:
         a:
@@ -71,7 +71,7 @@ analysis_metrics:
           upper_bound: 1  # Upper limit is 100%
 
     - id: lackOfCohesion
-      checked: false
+      checked: true
       source: CodeQL
       thresholds:
         a:
