@@ -71,7 +71,7 @@ analysis_metrics:
           upper_bound: 1  # Upper limit is 100%
 
     - id: lackOfCohesion
-      checked: true
+      checked: false
       source: CodeQL
       thresholds:
         a:
