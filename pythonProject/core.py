@@ -6,7 +6,7 @@ class App:
     def __init__(self):
         self.user = User(
             name="Alice",
-            birthday=date(1990, 5, 15),
+            birthday=date(1990, 5, 16),
             address="123 Main St, Springfield"
         )
 
